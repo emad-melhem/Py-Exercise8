@@ -14,6 +14,8 @@ print(indexOf_letter('z'))
 def is_pangram(text):
     letters = list(map(chr ,range(97, 123))) # creat list of lower letters.
     for letter in text:
+        if len(letters) == 0: #break the loop if it is pangram.
+            break
         if letter.lower() in letters:
             letters.remove(letter) # remove the same letter from letters to get the letters that are not present in the text.
     return len(letters) == 0 # True if all letters are present in the text.otherwise False
